@@ -11,7 +11,7 @@ namespace PlanetsApi.Services
 {
     public interface IPlanetService
     {
-        Task<Planet> Get(string name);
+        Task<Planet?> Get(string name);
         Task<IEnumerable<string>> GetPlanetNames();
     }
 
@@ -25,10 +25,10 @@ namespace PlanetsApi.Services
                 + "Data" + Path.DirectorySeparatorChar + "planets.json";
         }
 
-        public async Task<Planet> Get(string name)
+        public async Task<Planet?> Get(string name)
         {
             var planets = await GetAll();
-            return planets.Single(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+            return planets.SingleOrDefault(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
 
         async Task<IEnumerable<Planet>> GetAll()
