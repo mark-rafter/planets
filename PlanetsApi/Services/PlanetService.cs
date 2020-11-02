@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -9,9 +11,8 @@ namespace PlanetsApi.Services
 {
     public interface IPlanetService
     {
-        Task<IEnumerable<Planet>> GetAll();
-
         Task<Planet> Get(string name);
+        Task<IEnumerable<string>> GetPlanetNames();
     }
 
     public class PlanetService : IPlanetService
@@ -24,15 +25,23 @@ namespace PlanetsApi.Services
                 + "Data" + Path.DirectorySeparatorChar + "planets.json";
         }
 
-        public Task<Planet> Get(string name)
+        public async Task<Planet> Get(string name)
         {
-            throw new System.NotImplementedException();
+            var planets = await GetAll();
+            return planets.Single(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        public async Task<IEnumerable<Planet>> GetAll()
+        async Task<IEnumerable<Planet>> GetAll()
         {
             using FileStream fs = File.OpenRead(planetsJsonPath);
-            return await JsonSerializer.DeserializeAsync<IEnumerable<Planet>>(fs);
+            return await JsonSerializer.DeserializeAsync<IEnumerable<Planet>>(fs)
+                ?? throw new InvalidOperationException($"No planets found in {planetsJsonPath}");
+        }
+
+        public async Task<IEnumerable<string>> GetPlanetNames()
+        {
+            var planets = await GetAll();
+            return planets.Select(p => p.Name);
         }
     }
 }

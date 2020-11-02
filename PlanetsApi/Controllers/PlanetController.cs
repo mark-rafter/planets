@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PlanetsApi.Models;
 using PlanetsApi.Services;
 
 namespace PlanetsApi.Controllers
@@ -19,15 +17,16 @@ namespace PlanetsApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Planet>> Get()
+        public async Task<IEnumerable<string>> Get()
         {
-            return await planetService.GetAll();
+            return await planetService.GetPlanetNames();
         }
 
         [HttpGet("{name}")]
-        public async Task<IEnumerable<Planet>> Get(string name)
+        public async Task<IActionResult> Get(string name)
         {
-            throw new NotImplementedException();
+            var result = await planetService.Get(name);
+            return result is null ? NotFound() : Ok(result);
         }
     }
 }
