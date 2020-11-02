@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        integrity="sha512-4E4EgnhRoo0IXwAtqk/RIu5UjW7/mdqVOWBxeh2omq9mem2We4+Xhx+oXmpk0OyHNF3c3XZ+5PXuRopNoeVfHQ=="
+        crossorigin="anonymous" />
+
+    <title>Planets</title>
+</head>
+
+<body>
+    <noscript>
+        <div class="alert alert-danger m-3" role="alert">
+            This app requires JavaScript to be enabled.
+        </div>
+    </noscript>
+
+    <div id="app">
+        <main class="container mx-auto">
+            <h1>Planets</h1>
+            <h5>Select a planet to learn more...</h5>
+            <select id="planetSelect" class="form-select" aria-label="Select planet" v-model="selectedPlanet">
+                <option value="null">Select a planet...</option>
+                <option v-for="planetName in planetNames" v-bind:value="planetName">
+                    {{ planetName }}
+                </option>
+            </select>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"
+        integrity="sha512-REb0S2epbS0XtS28ifNa1haxmTZigXjB+Tx5IHCvXZndWB2RL431Vt1qONzFoe0dPwA8WGow+xxkQwhVr44nRg=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"
+        integrity="sha512-r8o3IMbHMsQlcQv/AbejcCasSXqwlwjnstW1Li1MELnRr/d8Fv/vQsOQh4Xu03E3lFpoefqvloTq4ATpHcEzIg=="
+        crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
