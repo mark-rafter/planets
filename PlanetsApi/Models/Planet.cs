@@ -8,7 +8,7 @@ namespace PlanetsApi.Models
         Length Diameter)
     {
         public Planet(PlanetEntity entity)
-        : this(entity.Name, entity.ImageUrl, entity.DistanceFromSun, entity.Mass, new Length(entity.DiameterInKm))
+        : this(entity.Name, entity.ImageUrl, entity.DistanceFromSunInAu.ToString(), entity.Mass, new Length(entity.DiameterInKm))
         {
         }
     }
@@ -16,9 +16,14 @@ namespace PlanetsApi.Models
     public record PlanetEntity(
         string Name,
         string ImageUrl,
-        string DistanceFromSun,
+        DistanceFromSun DistanceFromSunInAu,
         string Mass,
         decimal DiameterInKm);
+
+    public record DistanceFromSun(decimal Min, decimal Max)
+    {
+        public override string ToString() => $"{Min:N2} AU – {Max:N2} AU";
+    }
 
     public class Length
     {
