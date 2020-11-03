@@ -24,12 +24,14 @@
         <main class="container mx-auto">
             <h1>Planets</h1>
             <h5>Select a planet to learn more...</h5>
-            <select id="planetSelect" class="form-select" aria-label="Select planet" v-model="selectedPlanet">
-                <option value="null">Select a planet...</option>
-                <option v-for="planetName in planetNames" v-bind:value="planetName">
-                    {{ planetName }}
-                </option>
-            </select>
+
+            <div v-for="planetName in planetNames">
+                <input type="radio" class="btn-check" v-bind:id="planetName" autocomplete="off"
+                    @click="updatePlanetInfo(planetName)">
+                <label class="btn btn-outline-primary" v-bind:for="planetName">{{planetName}}</label>
+            </div>
+
+            <planet-info v-if="planetInfo" v-bind:planet-info="planetInfo"></planet-info>
         </main>
     </div>
 
