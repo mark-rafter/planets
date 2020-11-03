@@ -1,4 +1,6 @@
 # Planets
+[![Build status](https://github.com/mark-rafter/planets/workflows/Build/badge.svg)](https://github.com/mark-rafter/planets/actions?query=workflow%3A%22.NET%20Core%20Build%22)
+
 Interview test demonstrating VueJS frontend with ASP.NET Core backend
 
 ## Demo
