@@ -6,7 +6,7 @@
             "Min": 0.307499,
             "Max": 0.466697
         },
-        "Mass": "3.3011e23 kg",
+        "MassInKg": 3.3011e23,
         "DiameterInKm": 4880
     },
     {
@@ -16,7 +16,7 @@
             "Min": 0.718440,
             "Max": 0.728213
         },
-        "Mass": "4.8675e24 kg",
+        "MassInKg": 4.8675e24,
         "DiameterInKm": 12103
     },
     {
@@ -26,7 +26,7 @@
             "Min": 0.983269,
             "Max": 1.016726
         },
-        "Mass": "5.97237e24 kg",
+        "MassInKg": 5.97237e24,
         "DiameterInKm": 12742
     },
     {
@@ -36,7 +36,7 @@
             "Min": 1.382,
             "Max": 1.666
         },
-        "Mass": "6.4171e23 kg",
+        "MassInKg": 6.4171e23,
         "DiameterInKm": 6779
     },
     {
@@ -46,7 +46,7 @@
             "Min": 4.9501,
             "Max": 5.4588
         },
-        "Mass": "1.8982e27 kg",
+        "MassInKg": 1.8982e27,
         "DiameterInKm": 139822
     },
     {
@@ -56,7 +56,7 @@
             "Min": 9.0412,
             "Max": 10.1238
         },
-        "Mass": "5.6834e26 kg",
+        "MassInKg": 5.6834e26,
         "DiameterInKm": 116464
     },
     {
@@ -66,7 +66,7 @@
             "Min": 18.33,
             "Max": 20.11
         },
-        "Mass": "8.6810e25 kg",
+        "MassInKg": 8.6810e25,
         "DiameterInKm": 50724
     },
     {
@@ -76,7 +76,7 @@
             "Min": 29.81,
             "Max": 30.33
         },
-        "Mass": "1.02413e26 kg",
+        "MassInKg": 1.02413e26,
         "DiameterInKm": 49244
     }
 ]

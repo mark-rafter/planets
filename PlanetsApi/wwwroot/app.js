@@ -31,7 +31,12 @@ app.component('planet-info', {
                 <span class="fa-li"><i class="fas fa-binoculars"></i></span> Distance from the sun: {{ planetInfo.distanceFromSun }}
             </li>
             <li>
-                <span class="fa-li"><i class="fas fa-weight-hanging"></i></span> Mass: {{ planetInfo.mass }}
+                <span class="fa-li"><i class="fas fa-weight-hanging"></i></span> Mass:
+                <ul>
+                    <li v-for="(value, unit) in planetInfo.mass">
+                        {{ value }} {{ unit }}
+                    </li>
+                </ul> 
             </li>
             <li>
                 <span class="fa-li"><i class="fas fa-arrows-alt-h"></i></span> Diameter:

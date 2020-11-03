@@ -4,11 +4,16 @@ namespace PlanetsApi.Models
         string Name,
         string ImageUrl,
         string DistanceFromSun,
-        string Mass,
+        Mass Mass,
         Length Diameter)
     {
         public Planet(PlanetEntity entity)
-        : this(entity.Name, entity.ImageUrl, entity.DistanceFromSunInAu.ToString(), entity.Mass, new Length(entity.DiameterInKm))
+        : this(
+            entity.Name,
+            entity.ImageUrl,
+            entity.DistanceFromSunInAu.ToString(),
+            new Mass(entity.MassInKg),
+            new Length(entity.DiameterInKm))
         {
         }
     }
@@ -17,25 +22,11 @@ namespace PlanetsApi.Models
         string Name,
         string ImageUrl,
         DistanceFromSun DistanceFromSunInAu,
-        string Mass,
+        decimal MassInKg,
         decimal DiameterInKm);
 
     public record DistanceFromSun(decimal Min, decimal Max)
     {
         public override string ToString() => $"{Min:N2} AU – {Max:N2} AU";
-    }
-
-    public class Length
-    {
-        readonly decimal diameterInKm;
-
-        public Length(decimal diameterInKm)
-        {
-            this.diameterInKm = diameterInKm;
-        }
-
-        public string Km => diameterInKm.ToString("N0");
-        public string Miles => (diameterInKm * 0.62137m).ToString("N0");
-        public string Earths => string.Format("{0:#,##0.##}", diameterInKm / 12_742);
     }
 }
