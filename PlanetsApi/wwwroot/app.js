@@ -25,9 +25,9 @@ app.component('planet-info', {
     },
     template: `
         <h3>{{ planetInfo.name }}</h3>
-        <img src="{{ planetInfo.imageUrl }}" />
+        <img v-bind:src="planetInfo.imageUrl" />
         <ul>
-            <li>Distance from the sun: {{ planetInfo.distance }}</li>
+            <li>Distance from the sun: {{ planetInfo.distanceFromSun }}</li>
             <li>Mass: {{ planetInfo.mass }}</li>
             <li>Diameter: {{ planetInfo.diameter }}</li>
         </ul>`

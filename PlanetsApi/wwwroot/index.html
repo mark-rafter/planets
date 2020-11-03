@@ -25,10 +25,12 @@
             <h1>Planets</h1>
             <h5>Select a planet to learn more...</h5>
 
-            <div v-for="planetName in planetNames">
-                <input type="radio" class="btn-check" v-bind:id="planetName" autocomplete="off"
-                    @click="updatePlanetInfo(planetName)">
-                <label class="btn btn-outline-primary" v-bind:for="planetName">{{planetName}}</label>
+            <div class="btn-group" role="group" aria-label="Select planet">
+                <template v-for="planetName in planetNames">
+                    <input type="radio" class="btn-check" name="planetradio" v-bind:id="planetName" autocomplete="off"
+                        @click="updatePlanetInfo(planetName)">
+                    <label class="btn btn-outline-primary" v-bind:for="planetName">{{planetName}}</label>
+                </template>
             </div>
 
             <planet-info v-if="planetInfo" v-bind:planet-info="planetInfo"></planet-info>
