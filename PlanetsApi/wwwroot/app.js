@@ -26,10 +26,10 @@ app.component('planet-info', {
     template: `
         <h3>{{ planetInfo.name }}</h3>
         <img v-bind:src="planetInfo.imageUrl" />
-        <ul>
-            <li>Distance from the sun: {{ planetInfo.distanceFromSun }}</li>
-            <li>Mass: {{ planetInfo.mass }}</li>
-            <li>Diameter: {{ planetInfo.diameter }}</li>
+        <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fas fa-binoculars"></i></span> Distance from the sun: {{ planetInfo.distanceFromSun }}</li>
+            <li><span class="fa-li"><i class="fas fa-weight-hanging"></i></span> Mass: {{ planetInfo.mass }}</li>
+            <li><span class="fa-li"><i class="fas fa-arrows-alt-h"></i></span> Diameter: {{ planetInfo.diameter }}</li>
         </ul>`
 });
 

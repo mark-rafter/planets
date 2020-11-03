@@ -17,12 +17,14 @@ namespace PlanetsApi.Controllers
         }
 
         [HttpGet]
+        [ResponseCache(Duration = 600)]
         public async Task<IEnumerable<string>> Get()
         {
             return await planetService.GetPlanetNames();
         }
 
         [HttpGet("{name}")]
+        [ResponseCache(Duration = 600)]
         public async Task<IActionResult> Get(string name)
         {
             var result = await planetService.Get(name);
