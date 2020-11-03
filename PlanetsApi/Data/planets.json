@@ -4,55 +4,55 @@
         "ImageUrl": "img/mercury.jpg",
         "DistanceFromSun": "0.307499 AU – 0.466697 AU",
         "Mass": "3.3011e23 kg",
-        "Diameter": "4880 km"
+        "DiameterInKm": 4880
     },
     {
         "Name": "Venus",
         "ImageUrl": "img/venus.jpg",
         "DistanceFromSun": "0.718440 AU – 0.728213 AU",
         "Mass": "4.8675e24 kg",
-        "Diameter": "12103 km"
+        "DiameterInKm": 12103
     },
     {
         "Name": "Earth",
         "ImageUrl": "img/earth.jpg",
         "DistanceFromSun": "1 AU",
         "Mass": "5.97237e24 kg",
-        "Diameter": "12742 km"
+        "DiameterInKm": 12742
     },
     {
         "Name": "Mars",
         "ImageUrl": "img/mars.jpg",
         "DistanceFromSun": "1.382 AU – 1.666 AU",
         "Mass": "6.4171e23 kg",
-        "Diameter": "6779 km"
+        "DiameterInKm": 6779
     },
     {
         "Name": "Jupiter",
         "ImageUrl": "img/jupiter.png",
         "DistanceFromSun": "4.9501 AU – 5.4588 AU",
         "Mass": "1.8982e27 kg",
-        "Diameter": "139822 km"
+        "DiameterInKm": 139822
     },
     {
         "Name": "Saturn",
         "ImageUrl": "img/saturn.jpg",
         "DistanceFromSun": "9.0412 AU – 10.1238 AU",
         "Mass": "5.6834e26 kg",
-        "Diameter": "116464 km"
+        "DiameterInKm": 116464
     },
     {
         "Name": "Uranus",
         "ImageUrl": "img/uranus.jpg",
         "DistanceFromSun": "18.33 AU – 20.11 AU",
         "Mass": "8.6810e25 kg",
-        "Diameter": "50724 km"
+        "DiameterInKm": 50724
     },
     {
         "Name": "Neptune",
         "ImageUrl": "img/neptune.jpg",
         "DistanceFromSun": "29.81 AU – 30.33 AU",
         "Mass": "1.02413e26 kg",
-        "Diameter": "49244 km"
+        "DiameterInKm": 49244
     }
 ]

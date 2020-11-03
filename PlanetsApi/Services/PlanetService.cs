@@ -17,31 +17,25 @@ namespace PlanetsApi.Services
 
     public class PlanetService : IPlanetService
     {
-        readonly string planetsJsonPath;
+        readonly IDataContext dataContext;
 
-        public PlanetService(IWebHostEnvironment env)
+        public PlanetService(IDataContext dataContext)
         {
-            planetsJsonPath = env.ContentRootPath + Path.DirectorySeparatorChar
-                + "Data" + Path.DirectorySeparatorChar + "planets.json";
+            this.dataContext = dataContext;
         }
 
         public async Task<Planet?> Get(string name)
         {
-            var planets = await GetAll();
-            return planets.SingleOrDefault(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
-        }
+            var planetEntity = (await dataContext.GetPlanets())
+                .SingleOrDefault(p => p.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
 
-        async Task<IEnumerable<Planet>> GetAll()
-        {
-            using FileStream fs = File.OpenRead(planetsJsonPath);
-            return await JsonSerializer.DeserializeAsync<IEnumerable<Planet>>(fs)
-                ?? throw new InvalidOperationException($"No planets found in {planetsJsonPath}");
+            return planetEntity is not null ? new Planet(planetEntity) : null;
         }
 
         public async Task<IEnumerable<string>> GetPlanetNames()
         {
-            var planets = await GetAll();
-            return planets.Select(p => p.Name);
+            var planetEntities = await dataContext.GetPlanets();
+            return planetEntities.Select(p => p.Name);
         }
     }
 }
