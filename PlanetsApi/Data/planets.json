@@ -2,7 +2,7 @@
     {
         "Name": "Mercury",
         "ImageUrl": "img/mercury.jpg",
-        "DistanceFromSun": "0.466697 AU – 0.307499 AU",
+        "DistanceFromSun": "0.307499 AU – 0.466697 AU",
         "Mass": "3.3011e23 kg",
         "Diameter": "4880 km"
     },
